@@ -15,7 +15,7 @@ export default function Home() {
 
       {/* Bottom Left */}
       <div className="absolute bottom-4 left-4 leading-5 text-lg md:leading-9 md:text-4xl font-semibold tracking-tight">
-        I am a design focued<br />developer passionate about<br />making people's lives easier
+        I am a design focued<br />developer passionate about<br />making people&apos;s lives easier
       </div>
 
       {/* Bottom Right */}
