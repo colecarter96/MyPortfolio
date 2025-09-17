@@ -282,14 +282,15 @@ export default function FunPage() {
       <div>
         <section className="flex flex-col gap-2 justify-start items-center py-40">
           {cities.map((city, i) => (
-            <div className="flex flex-row">
-              <p className={`text-sm font-semibold transition-colors duration-50 ${
+            <div key={i} className="flex flex-row ">
+              <p
+                className={`text-sm font-semibold transition-colors duration-50 ${
                   i === activeCityIndex ? "text-black" : "text-gray-400"
-                }`}>
+                }`}
+              >
                 {city.country}
               </p>
               <h2
-                key={i}
                 ref={(el) => {
                   cityRefs.current[i] = el!;
                 }}
@@ -300,14 +301,14 @@ export default function FunPage() {
                 {city.city}
               </h2>
             </div>
-            
           ))}
-          
         </section>
+
         <h1 className="font-semibold text-6xl mb-6 pt-4 pb-10 ml-6 tracking-tighter">
           TRAVEL
         </h1>
       </div>
+
     </main>
   );
 }
