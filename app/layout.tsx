@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from 'next/font/local';
 import HeaderWrapper from "./components/HeaderWrapper";
+import FooterWrapper from "./components/FooterWrapper";
 
 
 const geistSans = Geist({
@@ -60,7 +61,8 @@ export default function RootLayout({
         className={`${pretendard.className} flex flex-col min-h-screen`}
       >
         <HeaderWrapper />
-        <main className="flex-grow flex">{children}</main>
+        <main className="flex-grow ">{children}</main>  
+        <FooterWrapper />
       </body>
     </html>
   );

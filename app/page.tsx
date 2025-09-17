@@ -39,10 +39,10 @@ export default function Home() {
       {/* Main content area */}
       <div className="flex flex-1 flex-col items-center justify-center relative z-20 pb-12">
         {/* Center Row */}
-        <div className="flex justify-between w-full px-6 font-semibold text-sm">
+        <div className="flex justify-between w-full px-6 font-semibold text-xs md:text-sm">
           <div>FEATURED PROJECT</div>
           <div>LOCKED IN: HABIT TRACKER</div>
-          <div>iOS</div>
+          <div className="hidden md:block">iOS</div>
           <div className="underline">VIEW PROJECT</div>
         </div>
 
@@ -52,7 +52,7 @@ export default function Home() {
         </div>
 
         {/* Bottom Right */}
-        <div className="absolute bottom-8 right-8 text-xl font-semibold">
+        <div className="hidden md:absolute bottom-8 right-8 text-xl font-semibold">
           (HOME)
         </div>
       </div>
