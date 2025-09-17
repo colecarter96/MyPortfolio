@@ -97,15 +97,15 @@ const Footer: React.FC = () => {
       {/* Upper Section */}
       <div className="flex flex-col md:flex-row md:items-end justify-between pb-8 mb-8">
         {/* Image and Initials */}
-        <div className="flex flex-col items-start mb-6 md:mb-0">
+        <div className="flex flex-col items-center mb-6 md:mb-0 ">
           <Image
-            src="/path/to/your/image.png"
+            src="/portfolioFooter-min.png"
             alt="Your Initials"
-            width={80} // adjust as needed
-            height={80} // adjust as needed
+            width={340} // adjust as needed
+            height={120} // adjust as needed
             className="object-cover"
           />
-          <p className="mt-2 text-xl font-semibold">CSC</p>
+          {/* <p className="mt-2 text-xl font-semibold">CSC</p> */}
         </div>
 
         {/* Navigation and other info */}
