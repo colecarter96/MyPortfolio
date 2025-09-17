@@ -138,19 +138,19 @@ const Footer: React.FC = () => {
             <ul className="text-2xl font-semibold space-y-2">
               <li className="flex">
                 <span className="">E: </span>{" "}
-                <span className="font-medium">colescarter@gmail.com</span>
+                <span className="font-medium"> colescarter@gmail.com</span>
               </li>
               <li className="flex">
                 <span className="">SE: </span>{" "}
-                <span className="font-medium">cscarter@ucsd.edu</span>
+                <span className="font-medium"> cscarter@ucsd.edu</span>
               </li>
               <li className="flex">
                 <span className="">M: </span>{" "}
-                <span className="font-medium">+1 (805) 754-7679</span>
+                <span className="font-medium"> +1 (805) 754-7679</span>
               </li>
               <li className="flex">
                 <span className="">H: </span>{" "}
-                <span className="font-medium">Monday-Friday, 9am-5pm</span>
+                <span className="font-medium"> Monday-Friday, 9am-5pm</span>
               </li>
             </ul>
           </div>

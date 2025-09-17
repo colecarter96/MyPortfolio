@@ -1,8 +1,148 @@
-export default function ProjectsPage() {
+
+// "use client";
+// import { useState } from "react";
+
+// export default function Projects() {
+//   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+//   const toggle = (index: number) => {
+//     setOpenIndex(openIndex === index ? null : index);
+//   };
+
+//   const projects = [
+//     { title: "Blueprint", type: "(Web)", details: "Blueprint is a web app made as \"visual discovery engine\" for video content. Think like Pinterest or Cosmos but for the video stuff. Everything from Hooks and Fonts to videos in a specific niche.", img: "/blueprintB.svg", link: "https://blueprint-five-ruby.vercel.app/" },
+//     { title: "Locked In: Habit Tracker", type: "(iOS)", details: "A mobile app that helps track habits. A design first app that helped me learn swift and desinging from Figma to real app as fast as possible. With the purpose of encouraging you to keep all of your habits completed for each day.", img: "/lockedInLogo2Dark.png" , link: "https://apps.apple.com/us/app/locked-in-habit-tracker/id6751342228"},
+//     { title: "Pants Index", type: "(Web)", details: "Measurements first pants shopping. As a man there isn't much we can do with our outfits, so getting the pants right is a crucial piece. Finding ones that fit isn't much easier, this brand says 34 inches is a 32 size, but this other brand says 33 inches is. Pants Index Aims at helping solve that problem.", img: "/redWhiteLogoSq.svg", link: "https://pants-index.vercel.app/"},
+//     { title: "Government Trading Automation", type: "(Server)", details: "A US Government Politician Trading Automation. They know more than I, so why not trust them. If they work for the government and are moving their money, there must be something going on. Built using Alpaca API a custom web scraper and ran on AWS, this automation would excecute trades daily with a paper trading account.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnKMyr0-GObSqkJAbg72jD3wr6imDKyX1n7g&s", link:"https://matter-alpha.vercel.app/projects" }
+//   ];
+
+//   return (
+//     <main>
+//       {projects.map((project, index) => (
+//         <div
+//           key={index}
+//           className={`border-b-[1.5px] ${
+//             index === 0 ? "border-t-[1.5px] mt-40" : ""
+//           } ${
+//             index === projects.length - 1 ? "mb-40" : ""}`}
+//         >
+//           {/* Row */}
+//           <div className="flex justify-between px-5 lg:px-70 py-8 md:py-12">
+//             <h1 className="text-xl md:text-2xl lg:text-4xl flex items-baseline gap-2">
+//               (0{index + 1}) {project.title}
+//               <sup className="text-sm md:text-lg lg:text-xl font-normal">
+//                 {project.type}
+//               </sup>
+//             </h1>
+
+//             <button
+//               onClick={() => toggle(index)}
+//               className="text-2xl md:text-4xl pr-2 transition-transform duration-300"
+//             >
+//               {openIndex === index ? "−" : "+"}
+//             </button>
+//           </div>
+
+//           {/* Expandable content */}
+//           {openIndex === index && (
+//             <div>
+              
+//               <div className="flex flex-col md:flex-row md:justify-between md:items-center px-5 lg:px-70 pb-8 text-gray-700 pt-4">
+                
+//                 <div className="" >
+//                   <p className="mb-4 text-xl md:text-3xl font-semibold">{project.details}</p>
+//                   <p className="underline pb-4 md:pb-0"><a href={project.link} target="_blank" rel="noopener noreferrer">{project.title}↗</a></p>
+//               </div>
+//                 <img
+//                   src={project.img}
+//                   alt={project.title}
+//                   className="bg-black max-w-sm"
+//                 />
+//               </div>
+
+              
+//             </div>
+            
+//           )}
+//         </div>
+//       ))}
+//     </main>
+//   );
+// }
+
+
+"use client";
+import { useState } from "react";
+
+export default function Projects() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const projects = [
+    { title: "Blueprint", type: "(Web)", details: "Blueprint is a web app made as \"visual discovery engine\" for video content. Think like Pinterest or Cosmos but for the video stuff. Everything from Hooks and Fonts to videos in a specific niche.", img: "/blueprintB.svg", link: "https://blueprint-five-ruby.vercel.app/" },
+    { title: "Locked In: Habit Tracker", type: "(iOS)", details: "A mobile app that helps track habits. A design first app that helped me learn swift and desinging from Figma to real app as fast as possible. With the purpose of encouraging you to keep all of your habits completed for each day.", img: "/lockedInLogo2Dark.png" , link: "https://apps.apple.com/us/app/locked-in-habit-tracker/id6751342228"},
+    { title: "Pants Index", type: "(Web)", details: "Measurements first pants shopping. As a man there isn't much we can do with our outfits, so getting the pants right is a crucial piece. Finding ones that fit isn't much easier, this brand says 34 inches is a 32 size, but this other brand says 33 inches is. Pants Index Aims at helping solve that problem.", img: "/redWhiteLogoSq.svg", link: "https://pants-index.vercel.app/"},
+    { title: "Government Trading Automation", type: "(Server)", details: "A US Government Politician Trading Automation. They know more than I, so why not trust them. If they work for the government and are moving their money, there must be something going on. Built using Alpaca API a custom web scraper and ran on AWS, this automation would excecute trades daily with a paper trading account.", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnKMyr0-GObSqkJAbg72jD3wr6imDKyX1n7g&s", link:"https://matter-alpha.vercel.app/projects" }
+  ];
+
   return (
     <main>
-      <h1>Projects Page</h1>
-      <p>This is a blank page for your Projects section.</p>
+      {projects.map((project, index) => (
+        <div
+          key={index}
+          className={`border-b-[1.5px] ${
+            index === 0 ? "border-t-[1.5px] mt-40" : ""
+          } ${index === projects.length - 1 ? "mb-40" : ""}`}
+        >
+          {/* Whole row is clickable */}
+          <div
+            onClick={() => toggle(index)}
+            className="flex justify-between px-5 lg:px-70 py-8 md:py-12 cursor-pointer"
+          >
+            <h1 className="text-xl md:text-2xl lg:text-4xl flex items-baseline gap-2">
+              (0{index + 1}) {project.title}
+              <sup className="text-sm md:text-lg lg:text-xl font-normal">
+                {project.type}
+              </sup>
+            </h1>
+
+            <span className="text-2xl md:text-4xl pr-2 transition-transform duration-300">
+              {openIndex === index ? "−" : "+"}
+            </span>
+          </div>
+
+          {/* Expandable content */}
+          {openIndex === index && (
+            <div>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-center px-5 lg:px-70 pb-8 text-gray-700 pt-4">
+                <div>
+                  <p className="mb-4 text-xl md:text-3xl font-semibold">
+                    {project.details}
+                  </p>
+                  <p className="underline pb-4 md:pb-0">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()} // ⬅️ prevents toggling when clicking link
+                    >
+                      {project.title}↗
+                    </a>
+                  </p>
+                </div>
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  className="bg-black max-w-sm w-auto"
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
     </main>
   );
 }
