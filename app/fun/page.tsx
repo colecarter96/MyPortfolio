@@ -167,7 +167,7 @@ export default function FunPage() {
 
   return (
     <main className="tracking-tight scroll-smooth">
-      <div className="pt-20 ml-6">
+      <div className="pt-10 md:pt-20 ml-6">
         
 
         {/* Horizontal scroll hijack section */}
