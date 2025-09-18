@@ -1,12 +1,17 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, ResponsiveContainer, Tooltip } from "recharts";
+import Image from "next/image";
 
 export default function FunPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const [activeCityIndex, setActiveCityIndex] = useState<number>(0);
   const cityRefs = useRef<HTMLHeadingElement[]>([]);
+
+
+
+  
 
   const runs = [
     { date: "January 25", distance: 4.02 },
@@ -69,28 +74,40 @@ export default function FunPage() {
     date: run.date,
   }));
 
-  
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
+    let lastDeltaY = 0;
+
     const onWheel = (e: WheelEvent) => {
       if (!el) return;
 
-      const atStart = el.scrollLeft <= 0;
-      const atEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth;
+      const tolerance = 1;
+      const atStart = el.scrollLeft <= tolerance;
+      const atEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth - tolerance;
 
-      // Only hijack vertical scroll if we're not at the boundaries
-      if (!atStart && !atEnd) {
+      // Scroll horizontally if possible
+      if ((e.deltaY > 0 && !atEnd) || (e.deltaY < 0 && !atStart)) {
         e.preventDefault();
         el.scrollLeft += e.deltaY;
+        lastDeltaY = e.deltaY;
+        return;
       }
+
+      // Otherwise, scroll vertically
+      window.scrollBy({
+        top: e.deltaY,
+        left: 0,
+        behavior: "smooth",
+      });
     };
 
     el.addEventListener("wheel", onWheel, { passive: false });
     return () => el.removeEventListener("wheel", onWheel);
   }, []);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -124,13 +141,27 @@ export default function FunPage() {
   });
 }, []);
 
+  const monthTicks = [
+    0,    // Jan 1
+    31,   // Feb 1
+    60,   // Mar 1 (ignoring leap year for simplicity)
+    91,   // Apr 1
+    121,  // May 1
+    152,  // Jun 1
+    182,  // Jul 1
+    213,  // Aug 1
+    244,  // Sep 1
+    274,  // Oct 1
+    305,  // Nov 1
+    335,  // Dec 1
+  ];
+
   const images = [
     { src: "/poster14-min.png", title: "MATTER EXPEDITION SERIES" },
     { src: "/poster3-min.png", title: "MATTER VERT" },
     { src: "/poster4-min.png", title: "MATTER STUDIO" },
     { src: "/poster6-min.png", title: "MATTER EA TICKET" },
-    { src: "/poster8-min.png", title: "MTR LOCATION" },
-    { src: "/poster10Fin-min.png", title: "MTR TRAIL DIVISION" },
+    
     { src: "/poster11-min.png", title: "PANTS INDEX" },
     { src: "/poster12-min.png", title: "BASECAMP" },
     { src: "/poster13-min.png", title: "MATTER FOUNDERS" },
@@ -139,8 +170,13 @@ export default function FunPage() {
     { src: "/poster18-min.png", title: "MATTER RECORDS" },
     { src: "/poster20-min.png", title: "HANDCRAFTED SOFTWARE" },
     { src: "/triangleAltLogo-min.png", title: "TRIANGLE LOGO" },
+    { src: "/poster10Fin-min.png", title: "MTR TRAIL DIVISION" },
 
   ];
+
+  const [loadedImages, setLoadedImages] = useState<boolean[]>(
+    Array(images.length).fill(false)
+  );
 
   // const cities = ["San Diego", "Los Angeles", "London", "Como", "Milano", "Firenze", "Pisa", "Chioma", 
   //"Roma", "Amalfi", "Paris", "Nice", "Monaco", "Sevilla", "Madrid", "Barcelona", "Lisboa", "Copenhagen", 
@@ -177,7 +213,7 @@ export default function FunPage() {
         
 
         {/* Horizontal scroll hijack section */}
-        <div
+        {/* <div
           ref={scrollRef}
           className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory h-[60vh] hide-horizontal-scrollbar scroll-smooth"
         >
@@ -211,7 +247,35 @@ export default function FunPage() {
               </div>
             </div>
           ))}
+        </div>*/}
+
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory h-[60vh] hide-horizontal-scrollbar scroll-smooth"
+        >
+          {images.map((img, i) => (
+            <div
+              key={i}
+              className="relative flex-shrink-0 snap-start mx-2 w-[300px] md:w-[250px] lg:w-[300px] xl:w-[350px] flex flex-col justify-end"
+            >
+              {/* Image sits naturally above the text */}
+              <Image
+                src={img.src}
+                alt={img.title}
+                width={350} 
+                height={200} // intrinsic ratio
+                className="w-[300px] md:w-[250px] lg:w-[350px] xl:w-[350px] h-auto reveal-image"
+                // onLoad={() => handleLoad(i)}
+              />
+
+              {/* Title below image */}
+              <div className="pt-2 font-semibold text-lg">
+                {img.title}
+              </div>
+            </div>
+          ))}
         </div>
+        
         <h1 className="font-semibold text-6xl pt-10 mb-6 md:pt-20 tracking-tighter">GRAPHIC DESIGN</h1>
       </div>
 
@@ -244,7 +308,7 @@ export default function FunPage() {
                 ref={(el) => {
                   cityRefs.current[i] = el!;
                 }}
-                className={`text-6xl font-semibold transition-colors duration-0 ${
+                className={`text-6xl lg:text-8xl font-semibold transition-colors duration-0 ${
                   i === activeCityIndex ? "text-black" : "text-gray-400"
                 }`}
               >
@@ -259,7 +323,7 @@ export default function FunPage() {
         </h1>
       </div>
 
-      <div className="px-6 py-20">
+      {/* <div className="px-6 py-20">
         <h1 className="font-semibold text-6xl mb-12 tracking-tighter">
           SONGS I CAN PLAY
         </h1>
@@ -340,13 +404,11 @@ export default function FunPage() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
         
       
       <div className=" pb-20">
-        <h1 className="font-semibold text-6xl ml-6 mb-6 pt-20 tracking-tighter">
-          RUNS
-        </h1>
+        
         <div className="flex flex-col md:flex-row justify-center px-6">
           <div className="flex flex-col">
             <div className="flex flex-col">
@@ -386,27 +448,33 @@ export default function FunPage() {
           </div>
           
           <div className="w-full md:w-1/2 h-96 -ml-6 md:-ml-0">
+            <h1 className="text-left md:text-right text-xl pl-6 md:pr-6 font-semibold underline">
+              <a href="https://strava.app.link/Gujq0kqLLWb" target="_blank" >Strava ↗</a>
+            </h1>
             <ResponsiveContainer>
               <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-                <CartesianGrid horizontal={false} vertical={false} />
+                <CartesianGrid horizontal={true} vertical={true} stroke="#555555" strokeDasharray="0 0" />
                 <XAxis
                   type="number"
                   dataKey="dayOfYear"
                   domain={[0, 365]}
+                  ticks={monthTicks}
                   tickFormatter={(d) => {
-                    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"];
-                    const monthIndex = Math.floor(d / 30.5);
-                    return months[monthIndex] || "";
+                    const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+                    const index = monthTicks.indexOf(d);
+                    return months[index] || "";
                   }}
                   label={{ value: "", position: "insideBottom", offset: -5 }}
+                  tickLine={false}
                 />
                 <YAxis
                   type="number"
                   dataKey="distance"
                   domain={[0, 10]}
-                  ticks={[5, 10]}
+                  ticks={[1,2,3,4,5,6,7,8,9,10]}
                   axisLine={false}
                   tickLine={false}
+                  tickFormatter={(d) => `${d} MI`}
                 />
                 <Tooltip
                   cursor={{ strokeDasharray: "3 3" }}
@@ -418,12 +486,15 @@ export default function FunPage() {
                   }
                 />
                 {/* Gray shadow dots behind */}
-                <Scatter data={data} fill="#d1d1d1" r={8} />  
                 <Scatter data={data} fill="#000000" r={5} />
               </ScatterChart>
             </ResponsiveContainer>
+            
           </div>
         </div>
+        <h1 className="font-semibold text-6xl ml-6 mb-6 pt-20 tracking-tighter">
+          RUNS
+        </h1>
       </div>
       
 

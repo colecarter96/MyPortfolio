@@ -1,7 +1,17 @@
+"use client"
+
 import Image from "next/image";
 import Header from "./components/Header";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+
+  const router = useRouter();
+
+  const goToProject = (index: number) => {
+    router.push(`/projects?open=${index}`);
+  };
+
   return (
 
     // <div className="flex flex-1 relative items-center justify-center pb-12">
@@ -43,7 +53,12 @@ export default function Home() {
           <div>FEATURED PROJECT</div>
           <div>LOCKED IN: HABIT TRACKER</div>
           <div className="hidden md:block">iOS</div>
-          <div className="underline">VIEW PROJECT</div>
+          <div
+            className="underline cursor-pointer"
+            onClick={() => goToProject(1)} // index of Locked In
+          >
+            VIEW PROJECT
+          </div>
         </div>
 
         {/* Bottom Left */}
