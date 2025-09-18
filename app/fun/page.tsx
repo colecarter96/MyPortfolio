@@ -214,7 +214,7 @@ export default function FunPage() {
       <div className="flex md:hidden flex-col">
         <h1 className="font-semibold text-6xl pt-10 mb-6 md:pt-20 tracking-tighter pl-6">GRAPHIC DESIGN</h1>
         <div className="mx-auto">
-          <Image
+          <img
             src="/poster14-min.png"
             alt="MATTER EXPEDITION SERIES PHOTO"
             width={350}
@@ -226,7 +226,7 @@ export default function FunPage() {
         </div>
 
         <div className="mx-auto">
-          <Image
+          <img
             src="/poster3-min.png"
             alt="MATTER VERT PHOTO"
             width={350}
@@ -238,7 +238,7 @@ export default function FunPage() {
         </div>
 
         <div className="mx-auto">
-          <Image
+          <img
             src="/poster12-min.png"
             alt="MATTER BASECAMP"
             width={350}
@@ -250,7 +250,7 @@ export default function FunPage() {
         </div>
 
          <div className="mx-auto">
-          <Image
+          <img
             src="/poster6-min.png"
             alt="MATTER EA TICKET"
             width={350}
