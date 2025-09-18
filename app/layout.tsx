@@ -59,7 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${pretendard.className} flex flex-col min-h-screen`}
+        className={`${pretendard.className} flex flex-col min-h-dvh`}
       >
         <HeaderWrapper />
         <main className="flex-grow ">{children}</main> 
