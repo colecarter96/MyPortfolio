@@ -125,15 +125,21 @@ export default function FunPage() {
 }, []);
 
   const images = [
-    { src: "/IMG_1412-min.JPG", title: "SURFING DEL MAR" },
-    { src: "/lockedInLogo2Dark.png", title: "LOCKED IN APP" },
-    { src: "/portfolioFooter-min.png", title: "FOOTER IMG" },
-    { src: "/IMG_1412-min.JPG", title: "SURFING DEL MAR" },
-    { src: "/lockedInLogo2Dark.png", title: "LOCKED IN APP" },
-    { src: "/portfolioFooter-min.png", title: "FOOTER IMG" },
-    { src: "/IMG_1412-min.JPG", title: "SURFING DEL MAR" },
-    { src: "/lockedInLogo2Dark.png", title: "LOCKED IN APP" },
-    { src: "/portfolioFooter-min.png", title: "FOOTER IMG" },
+    { src: "/poster14-min.png", title: "MATTER EXPEDITION SERIES" },
+    { src: "/poster3-min.png", title: "MATTER VERT" },
+    { src: "/poster4-min.png", title: "MATTER STUDIO" },
+    { src: "/poster6-min.png", title: "MATTER EA TICKET" },
+    { src: "/poster8-min.png", title: "MTR LOCATION" },
+    { src: "/poster10Fin-min.png", title: "MTR TRAIL DIVISION" },
+    { src: "/poster11-min.png", title: "PANTS INDEX" },
+    { src: "/poster12-min.png", title: "BASECAMP" },
+    { src: "/poster13-min.png", title: "MATTER FOUNDERS" },
+    
+    { src: "/poster15-min.png", title: "RUN POST" },
+    { src: "/poster18-min.png", title: "MATTER RECORDS" },
+    { src: "/poster20-min.png", title: "HANDCRAFTED SOFTWARE" },
+    { src: "/triangleAltLogo-min.png", title: "TRIANGLE LOGO" },
+
   ];
 
   // const cities = ["San Diego", "Los Angeles", "London", "Como", "Milano", "Firenze", "Pisa", "Chioma", 
@@ -192,8 +198,8 @@ export default function FunPage() {
             // </div>
             <div
               key={i}
-              className="relative flex-shrink-0 snap-start mx-6"
-              style={{ width: "250px" }}
+              className="relative flex-shrink-0 snap-start mx-2 w-[260px] md:w-[280px] lg:w-[350px]"
+              // style={{ width: "250px" }}
             >
               <img
                 src={img.src}

@@ -238,7 +238,7 @@ export default function Header({ className }: HeaderProps) {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden relative overflow-hidden rounded-full bg-black text-white font-semibold h-12 px-6 flex justify-center items-center"
+        className="md:hidden relative overflow-hidden font-black font-semibold h-12 px-6 flex justify-center items-center"
         onClick={() => setMobileMenuOpen(true)}
       >
         MENU
