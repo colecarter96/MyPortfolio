@@ -21,7 +21,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed text-xl font-semibold bottom-6 right-6  px-4 py-2  hover:text-gray-500 transition"
+      className="fixed textlg md:text-xl font-semibold bottom-4 right-2 md:bottom-4 md:right-4  px-4 py-2  hover:text-gray-500 transition"
     >
       (BACK TO TOP)
     </button>
