@@ -164,7 +164,7 @@ export default function FunPage() {
     
     { src: "/poster11-min.png", title: "PANTS INDEX" },
     { src: "/poster12-min.png", title: "BASECAMP" },
-    { src: "/poster13-min.png", title: "MATTER FOUNDERS" },
+    // { src: "/poster13-min.png", title: "MATTER FOUNDERS" },
     
     { src: "/poster15-min.png", title: "RUN POST" },
     { src: "/poster18-min.png", title: "MATTER RECORDS" },
