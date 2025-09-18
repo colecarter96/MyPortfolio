@@ -211,7 +211,58 @@ export default function FunPage() {
 
   return (
     <main className="tracking-tight scroll-smooth">
-      <div className="hidden md:block pt-10 md:pt-20 ml-6">
+      <div className="flex md:hidden flex-col">
+        <h1 className="font-semibold text-6xl pt-10 mb-6 md:pt-20 tracking-tighter pl-6">GRAPHIC DESIGN</h1>
+        <div className="mx-auto">
+          <Image
+            src="/poster14-min.png"
+            alt="MATTER EXPEDITION SERIES PHOTO"
+            width={350}
+            height={200}
+            className="w-[350px] h-auto mx-auto pt-10"
+            loading="lazy"
+          />
+          <p className="text-xl font-semibold pt-2">MATTER EXPEDITION SERIES</p>
+        </div>
+
+        <div className="mx-auto">
+          <Image
+            src="/poster3-min.png"
+            alt="MATTER VERT PHOTO"
+            width={350}
+            height={200}
+            className="w-[350px] md:w-[250px] lg:w-[350px] xl:w-[350px] h-auto mx-auto pt-10"
+            loading="lazy"
+          />
+          <p className="text-xl font-semibold pt-2">MATTER VERT</p>
+        </div>
+
+        <div className="mx-auto">
+          <Image
+            src="/poster12-min.png"
+            alt="MATTER BASECAMP"
+            width={350}
+            height={200}
+            className="w-[350px] md:w-[250px] lg:w-[350px] xl:w-[350px] h-auto mx-auto pt-10"
+            loading="lazy"
+          />
+          <p className="text-xl font-semibold pt-2">BASECAMP</p>
+        </div>
+
+         <div className="mx-auto">
+          <Image
+            src="/poster6-min.png"
+            alt="MATTER EA TICKET"
+            width={350}
+            height={200}
+            className="w-[350px] md:w-[250px] lg:w-[350px] xl:w-[350px] h-auto mx-auto pt-10"
+            loading="lazy"
+          />
+          <p className="text-xl font-semibold pt-2">MATTER EA TICKET</p>
+        </div>
+      </div>
+        
+      <div className="hidden md:block   pt-10 md:pt-20 ml-6">
         
 
         {/* Horizontal scroll hijack section */}
@@ -296,7 +347,10 @@ export default function FunPage() {
         ))}
       </section> */}
       <div>
-        <section className="flex flex-col gap-2 justify-start items-center py-40">
+        <h1 className="font-semibold text-6xl mb-6 pt-40 pb-2 ml-6 tracking-tighter">
+          TRAVEL
+        </h1>
+        <section className="flex flex-col gap-2 justify-start items-center py-10 pb-40">
           {cities.map((city, i) => (
             <div key={i} className="flex flex-row ">
               <p
@@ -320,9 +374,7 @@ export default function FunPage() {
           ))}
         </section>
 
-        <h1 className="font-semibold text-6xl mb-6 pt-4 pb-10 ml-6 tracking-tighter">
-          TRAVEL
-        </h1>
+        
       </div>
 
       {/* <div className="px-6 py-20">
@@ -410,6 +462,9 @@ export default function FunPage() {
         
       
       <div className=" pb-20">
+        <h1 className="font-semibold text-6xl ml-6 mb-6 pb-20 pt-10 tracking-tighter">
+          RUNS
+        </h1>
         
         <div className="flex flex-col md:flex-row justify-center px-6">
           <div className="flex flex-col">
@@ -494,9 +549,7 @@ export default function FunPage() {
             
           </div>
         </div>
-        <h1 className="font-semibold text-6xl ml-6 mb-6 pt-20 tracking-tighter">
-          RUNS
-        </h1>
+        
       </div>
       
 
