@@ -104,7 +104,9 @@ export default function FunPage() {
       });
     };
 
-    el.addEventListener("wheel", onWheel, { passive: false });
+    if (!("ontouchstart" in window)) {
+      el.addEventListener("wheel", onWheel, { passive: false });
+    }
     return () => el.removeEventListener("wheel", onWheel);
   }, []);
 
@@ -262,10 +264,10 @@ export default function FunPage() {
               <Image
                 src={img.src}
                 alt={img.title}
-                width={350} 
-                height={200} // intrinsic ratio
+                width={350}
+                height={200}
                 className="w-[300px] md:w-[250px] lg:w-[350px] xl:w-[350px] h-auto reveal-image"
-                // onLoad={() => handleLoad(i)}
+                loading="lazy"
               />
 
               {/* Title below image */}
