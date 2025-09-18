@@ -52,7 +52,7 @@ export default function Home() {
         </div>
 
         {/* Bottom Right */}
-        <div className="hidden md:absolute bottom-8 right-8 text-xl font-semibold">
+        <div className="hidden absolute md:block bottom-8 right-8 text-xl font-semibold">
           (HOME)
         </div>
       </div>

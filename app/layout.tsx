@@ -4,6 +4,7 @@ import "./globals.css";
 import localFont from 'next/font/local';
 import HeaderWrapper from "./components/HeaderWrapper";
 import FooterWrapper from "./components/FooterWrapper";
+import BackToTop from "./components/BackToTop";
 
 
 const geistSans = Geist({
@@ -61,7 +62,8 @@ export default function RootLayout({
         className={`${pretendard.className} flex flex-col min-h-screen`}
       >
         <HeaderWrapper />
-        <main className="flex-grow ">{children}</main>  
+        <main className="flex-grow ">{children}</main> 
+        <BackToTop /> 
         <FooterWrapper />
       </body>
     </html>
