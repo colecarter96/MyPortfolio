@@ -167,8 +167,8 @@ const Footer: React.FC = () => {
 
         {/* Column 2 */}
         <div className="flex flex-col text-md font-semibold mb-4 md:mb-0">
-          <p>LINKEDIN</p>
-          <p>INSTAGRAM</p>
+          <p><a href="https://www.linkedin.com/in/cole-carter13/" target="_blank">LINKEDIN</a></p>
+          <p><a href="https://www.instagram.com/colecartr/?hl=en" target="_blank">INSTAGRAM</a></p>
         </div>
 
         {/* Column 3 */}
