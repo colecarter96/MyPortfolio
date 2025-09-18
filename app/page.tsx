@@ -23,7 +23,7 @@ export default function Home() {
     //     (HOME)
     //   </div>
     // </div>
-     <div className="relative flex flex-col min-h-screen min-w-screen text-white">
+     <div className="relative flex flex-col h-dvh min-w-screen text-white">
       {/* Background Image */}
       <Image
         src="/IMG_1412-min.JPG"
