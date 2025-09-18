@@ -90,7 +90,7 @@ export default function ExperiencePage() {
 
           {/* Horizontal scroll menu */}
           <nav className="flex-1 overflow-x-auto whitespace-nowrap flex items-center space-x-8 px-4 py-3 text-lg lg:text-xl font-semibold">
-            <a href="#oss" className="hover:text-white flex">
+            <a href="#oss" className="hover:text-white hover:bg-black flex">
               <p>SWE Intern</p>
               <p className="text-sm pl-1">(OSS)</p>
             </a>
