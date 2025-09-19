@@ -227,14 +227,14 @@ export default function FunPage() {
 
         <div className="mx-auto">
           <img
-            src="/poster3-min.png"
-            alt="MATTER VERT PHOTO"
+            src="/poster18-min.png"
+            alt="MATTER RECORDS"
             width={350}
             height={200}
             className="w-[350px] md:w-[250px] lg:w-[350px] xl:w-[350px] h-auto mx-auto pt-10"
             loading="lazy"
           />
-          <p className="text-xl font-semibold pt-2">MATTER VERT</p>
+          <p className="text-xl font-semibold pt-2">MATTER RECORDS</p>
         </div>
 
         <div className="mx-auto">

@@ -41,15 +41,15 @@ export default function EducationPage() {
           </div>
 
           {/* Right main content */}
-          <div className="flex-1 flex flex-col items-left md:items-start pl-6 md:pl-0 mb-20">
-            <p className="mb-2 font-semibold text-3xl md:text-4xl">Computer Science ⟷ University of California San Diego</p>
+          <div className="flex-1 flex flex-col items-left md:items-start pl-6 md:pl-0 mb-40 pr-6 md:pr-0">
+            <p className="mb-10 font-semibold text-3xl md:text-4xl">Computer Science ⟷ University of California San Diego</p>
             
             <img
-              src="https://live.staticflickr.com/1586/25082735644_eb65c2d397_b.jpg"
+              src="https://i.redd.it/kzvxjt0qp1c51.jpg"
               alt="example"
               className="w-full pr-6 md:pr-42  text-left"
             />
-            <div className="flex flex-col lg:flex-row lg:justify-between w-full">
+            <div className="flex flex-col lg:flex-row lg:justify-between w-full pt-2">
               <p className="mb-0 font-semibold text-2xl">Fall 2021 🡒 Spring 2025</p>
               <p className="mb-4 font-semibold text-2xl pr-44">Warren College</p>
             </div>
