@@ -172,7 +172,6 @@ export default function FunPage() {
     { src: "/poster18-min.png", title: "MATTER RECORDS" },
     { src: "/poster20-min.png", title: "HANDCRAFTED SOFTWARE" },
     { src: "/triangleAltLogo-min.png", title: "TRIANGLE LOGO" },
-    { src: "/poster10Fin-min.png", title: "MTR TRAIL DIVISION" },
 
   ];
 

@@ -58,7 +58,7 @@ export default function Header({ className }: HeaderProps) {
             className="relative block h-6"
           >
             {/* Top text (slides up on hover) */}
-            <span className="block transition-transform duration-300 ease-in-out group-hover:-translate-y-9">
+            <span className="block transition-transform duration-300 ease-in-out group-hover:-translate-y-10">
               Get In Touch ↗ ‡
             </span>
 

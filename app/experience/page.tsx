@@ -90,6 +90,11 @@ export default function ExperiencePage() {
 
           {/* Horizontal scroll menu */}
           <nav className="flex-1 overflow-x-auto whitespace-nowrap flex items-center space-x-8 px-4 py-3 text-lg lg:text-xl font-semibold">
+            
+            <a href="#matter" className="hover:text-white flex">
+              <p>SWE & Designer</p>
+              <p className="text-sm pl-1">(MATTER)</p>
+            </a>
             <a href="#oss" className="hover:text-white flex">
               <p>SWE Intern</p>
               <p className="text-sm pl-1">(OSS)</p>
@@ -107,11 +112,31 @@ export default function ExperiencePage() {
 
         {/* Content sections */}
         <div className="px-6 md:pl-[20%] md:pr-6 space-y-24 py-12 ml-0 md:ml-4">
+          <section id="matter" className="scroll-mt-20 pt-20">
+            <div className="flex flex-col md:flex-row md:justify-between">
+              <h2 className="text-3xl md:text-4xl font-semibold mb-4">Software Engineering Intern & Designer</h2>
+              <a href="https://matter-alpha.vercel.app/" target="_blank"><h1 className="text-xl md:text-3xl font-semibold mb-4 underline pr-0 md:pr-4">MATTER ↗</h1></a>
+            </div>
+
+            <p className="font-semibold ">June 2025🡒Sept 2025</p>
+            {/* <h2 className="text-4xl font-semibold mb-4">Software Engineering Intern</h2>
+            <h1 className="text-3xl font-semibold mb-4">One Stop Systems ↗</h1> */}
+            <p className="pt-10 md:text-xl">
+              ↳Designed and Deployed a Swift UI iOS Application: *Locked In: Habit Tracker*
+            </p>
+            <p className="pt-2 md:text-xl">
+              ↳Constructed video inspiration web application for video creators and editors *Blueprint*
+            </p>
+            <p className="pt-2 md:text-xl">
+              Ideated and prototyped multiple potential software projects in collaboration with MATTER partner
+            </p>
+          </section>
           <section id="oss" className="scroll-mt-20 pt-20">
             <div className="flex flex-col md:flex-row md:justify-between">
               <h2 className="text-3xl md:text-4xl font-semibold mb-4">Software Engineering Intern</h2>
               <a href="https://onestopsystems.com/?gad_source=1&gad_campaignid=22936074644&gbraid=0AAAAAD-5PNOcrzz358Gt3LHuM4WGnCHPa&gclid=CjwKCAjwlaTGBhANEiwAoRgXBZUTVCBdY9WnG88POdYIlT8kkphy_q0hElhAkpjBwB5E4y215qcOLBoCb0IQAvD_BwE" target="_blank"><h1 className="text-xl md:text-3xl font-semibold mb-4 underline pr-0 md:pr-4">One Stop Systems ↗</h1></a>
             </div>
+            <p className="font-semibold ">June 2024🡒Aug 2024</p>
             {/* <h2 className="text-4xl font-semibold mb-4">Software Engineering Intern</h2>
             <h1 className="text-3xl font-semibold mb-4">One Stop Systems ↗</h1> */}
             <p className="pt-10 md:text-xl">
@@ -131,6 +156,7 @@ environments
               <h2 className="text-3xl md:text-4xl font-semibold mb-4">Research Assistant</h2>
               <a href="https://seelab.ucsd.edu/" target="_blank"><h1 className="text-xl md:text-3xl font-semibold mb-4 underline pr-0 md:pr-4">UCSD SEE Lab ↗</h1></a>
             </div>
+            <p className="font-semibold ">January 2025🡒June 2025</p>
             {/* <h2 className="text-4xl font-semibold mb-4">Software Engineering Intern</h2>
             <h1 className="text-3xl font-semibold mb-4">One Stop Systems ↗</h1> */}
             <p className="pt-10 md:text-xl">
@@ -151,6 +177,7 @@ environments
               <h2 className="text-3xl md:text-4xl font-semibold mb-4">VP Operations</h2>
               <a href="https://csesucsd.com/" target="_blank"><h1 className="text-xl md:text-3xl font-semibold mb-4 underline pr-0 md:pr-4">UCSD CSES Dev ↗</h1></a>
             </div>
+            <p className="font-semibold ">Sept 2024🡒June 2025</p>
             {/* <h2 className="text-4xl font-semibold mb-4">Software Engineering Intern</h2>
             <h1 className="text-3xl font-semibold mb-4">One Stop Systems ↗</h1> */}
             <p className="pt-10 md:text-xl">

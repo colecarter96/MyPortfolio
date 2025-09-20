@@ -29,7 +29,7 @@ export default function ProjectsClient() {
       team: ["Me"],
       details:
         'Blueprint is a web app made as "visual discovery engine" for video content. Think like Pinterest or Cosmos but for the video stuff. Everything from Hooks and Fonts to videos in a specific niche.',
-      img: "/blueprintB.svg",
+      img: "",
       link: "https://blueprint-five-ruby.vercel.app/",
     },
     {
@@ -59,7 +59,7 @@ export default function ProjectsClient() {
       team: ["Me", "Liam Mathers"],
       details:
         "A US Government Politician Trading Automation. Built using Alpaca API, a custom web scraper, and ran on AWS. This automation would execute trades daily with a paper trading account.",
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnKMyr0-GObSqkJAbg72jD3wr6imDKyX1n7g&s",
+      img: "",
       link: "https://matter-alpha.vercel.app/projects",
     },
   ];
@@ -116,9 +116,6 @@ export default function ProjectsClient() {
                     </div>
                   </div>
 
-                  <p className="mb-4 text-xl md:text-3xl font-semibold">
-                    {project.details}
-                  </p>
                   <p className="underline pb-4 md:pb-0">
                     <a
                       href={project.link}
@@ -129,12 +126,19 @@ export default function ProjectsClient() {
                       {project.title} ↗
                     </a>
                   </p>
+
+                  <p className="mb-4 text-xl md:text-3xl font-semibold pt-4">
+                    {project.details}
+                  </p>
+                  
                 </div>
-                <img
-                  src={project.img}
-                  alt={project.title}
-                  className="bg-black max-w-sm w-auto"
-                />
+                {project.img && project.img.trim() !== "" && (
+                    <img
+                        src={project.img}
+                        alt={project.title}
+                        className="bg-black max-w-sm w-auto"
+                    />
+                )}
               </div>
             </div>
           )}
